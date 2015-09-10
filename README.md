@@ -33,7 +33,7 @@ $ node prime
 
 出力
 1000,in primes: 168
-t:4ms
+t:1ms // 4ms -> 1ms
 ```
 
 ```
@@ -42,7 +42,7 @@ $ node prime
 
 出力
 10000,in primes: 1229
-t: 61ms
+t: 11ms // 61ms -> 11ms
 ```
 
 ```
@@ -51,7 +51,7 @@ $ node prime
 
 出力
 123456,in primes: 11601
-t: 6087ms
+t: 599ms // 6087ms -> 599ms
 ```
 
 
