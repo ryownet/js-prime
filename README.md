@@ -2,6 +2,8 @@
 
 ## node.js v0.12
 
+## 速度改善版
+
 ## 実行
 ## ターミナルで
 
@@ -33,7 +35,7 @@ $ node prime
 
 出力
 1000,in primes: 168
-t:4ms
+t:2ms // 4ms -> 2ms
 ```
 
 ```
@@ -42,7 +44,7 @@ $ node prime
 
 出力
 10000,in primes: 1229
-t: 61ms
+t: 22ms // 61ms -> 22ms
 ```
 
 ```
@@ -51,7 +53,7 @@ $ node prime
 
 出力
 123456,in primes: 11601
-t: 6087ms
+t: 1960ms // 6087ms -> 1960ms
 ```
 
 

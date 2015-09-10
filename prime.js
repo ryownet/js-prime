@@ -6,9 +6,13 @@ var Main = function( data ){
   if( debug) console.time('t');
 
   var result = [];
-
-  for(var i=0; i< parseInt(input[0]); i++){
-    if( isPrime(i, Math.max.apply(null, result)) ){
+  var inputNum = parseInt(input[0], 10);
+  if(inputNum < 2){
+    console.log ('not valid number');
+    return false;
+  }
+  for(var i=2; i< inputNum; i++){
+    if( isPrime(i, result) ){
       result.push(i);
     }
   }
@@ -21,19 +25,10 @@ var Main = function( data ){
 
 // param {int} n
 // return boolean
-var isPrime = function( n, currentMax){
-  if( n < 8 ){
-    if (n === 1) return false;
-    if (n === 2) return true;
-    if (n === 3) return true;
-    if (n === 5) return true;
-    if (n === 7) return true;
-  };
-  if( n % 2 === 0) return false;
-  if( n % 3 === 0) return false;
-  if( n % 5 === 0) return false;
-  if( n % 7 === 0) return false;
-  for(var i=9;i<n-1;i++){
+var isPrime = function( n, primeArray){
+  if( n in primeArray) return false;
+
+  for(var i=2; i<n-1; i++){
     if( n % i === 0 ){
       return false;
     }
@@ -42,10 +37,7 @@ var isPrime = function( n, currentMax){
 };
 
 /* 考え方
-偶数で割れれば素数ではない
-1は素数ではない
-2けた以上の場合は、事前に2,3,5,7で割り、false判定をとる
-nでしか割れないのが素数なので、n-1まで割り算を続ける
+素数配列にあれば素数、なけれ
 */
 
 
