@@ -18,24 +18,22 @@ var Main = function( data ){
   }
   console.log(input + 'in primes:', result.length);
   if( debug ) console.timeEnd('t');
-
-  //output
-  //console.log( "\n" );
 }
 
-// param {int} n
+// param {int} n, {array} primeArray
 // return boolean
 var isPrime = function( n, primeArray ){
   var l = primeArray.length;
   var currentMax = 1;
-  if( l > 0){
+  if( l > 0 ){
     if( n in primeArray) return false;
     for(var i=0; i<l; i++){
       if( n % primeArray[i] === 0 ) return false;
     }
-    currentMax = Math.max.apply(null, primeArray);
+    //currentMax = Math.max.apply(null, primeArray);
+    currentMax = primeArray[l-1];
   }
-  for(var j=currentMax; j<n-1; j++){
+  for(var j=currentMax+1; j<n-1; j++){
     if( n % j === 0 ){
       return false;
     }
